@@ -1,11 +1,8 @@
 <script>
-    import { base } from "$app/paths";
+  import Nav from '$lib/components/Nav.svelte';
 </script>
- 
-<nav>
-    <a href="{base}/">home</a>
-	<a href="{base}/about">about</a>
-</nav>
+
+<Nav />
 
 <h1>home</h1>
 <p>this is the home page.</p>

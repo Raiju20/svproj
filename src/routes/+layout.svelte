@@ -1,4 +1,5 @@
 <script>
+  let { children } = $props();
   import { base } from '$app/paths';
   import { page } from '$app/stores';
 
@@ -11,6 +12,7 @@
   <a href="{base}/" class:active={isActive('/')}>home</a>
   <a href="{base}/about" class:active={isActive('/about')}>about</a>
   <a href="{base}/junk" class:active={isActive('/junk')}>junk</a>
+  <a href="{base}/new" class:active={isActive('/new')}>new</a>
 </nav>
 
 <style>
@@ -23,3 +25,5 @@
     border-bottom: 2px solid;
   }
 </style>
+
+{@render children()}

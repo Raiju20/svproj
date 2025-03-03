@@ -1,0 +1,832 @@
+{
+  "id": "00000000-0000-0000-0000-000000000000",
+  "prevId": "",
+  "version": "6",
+  "dialect": "sqlite",
+  "tables": {
+    "albums": {
+      "name": "albums",
+      "columns": {
+        "AlbumId": {
+          "autoincrement": true,
+          "name": "AlbumId",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "Title": {
+          "autoincrement": false,
+          "name": "Title",
+          "type": "text(160)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ArtistId": {
+          "autoincrement": false,
+          "name": "ArtistId",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {
+        "IFK_AlbumArtistId": {
+          "name": "IFK_AlbumArtistId",
+          "columns": [
+            "ArtistId"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {
+        "albums_ArtistId_artists_ArtistId_fk": {
+          "name": "albums_ArtistId_artists_ArtistId_fk",
+          "tableFrom": "albums",
+          "tableTo": "artists",
+          "columnsFrom": [
+            "ArtistId"
+          ],
+          "columnsTo": [
+            "ArtistId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "artists": {
+      "name": "artists",
+      "columns": {
+        "ArtistId": {
+          "autoincrement": true,
+          "name": "ArtistId",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "Name": {
+          "autoincrement": false,
+          "name": "Name",
+          "type": "text(120)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "customers": {
+      "name": "customers",
+      "columns": {
+        "CustomerId": {
+          "autoincrement": true,
+          "name": "CustomerId",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "FirstName": {
+          "autoincrement": false,
+          "name": "FirstName",
+          "type": "text(40)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "LastName": {
+          "autoincrement": false,
+          "name": "LastName",
+          "type": "text(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Company": {
+          "autoincrement": false,
+          "name": "Company",
+          "type": "text(80)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Address": {
+          "autoincrement": false,
+          "name": "Address",
+          "type": "text(70)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "City": {
+          "autoincrement": false,
+          "name": "City",
+          "type": "text(40)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "State": {
+          "autoincrement": false,
+          "name": "State",
+          "type": "text(40)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Country": {
+          "autoincrement": false,
+          "name": "Country",
+          "type": "text(40)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "PostalCode": {
+          "autoincrement": false,
+          "name": "PostalCode",
+          "type": "text(10)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Phone": {
+          "autoincrement": false,
+          "name": "Phone",
+          "type": "text(24)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Fax": {
+          "autoincrement": false,
+          "name": "Fax",
+          "type": "text(24)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Email": {
+          "autoincrement": false,
+          "name": "Email",
+          "type": "text(60)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "SupportRepId": {
+          "autoincrement": false,
+          "name": "SupportRepId",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {
+        "IFK_CustomerSupportRepId": {
+          "name": "IFK_CustomerSupportRepId",
+          "columns": [
+            "SupportRepId"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {
+        "customers_SupportRepId_employees_EmployeeId_fk": {
+          "name": "customers_SupportRepId_employees_EmployeeId_fk",
+          "tableFrom": "customers",
+          "tableTo": "employees",
+          "columnsFrom": [
+            "SupportRepId"
+          ],
+          "columnsTo": [
+            "EmployeeId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "employees": {
+      "name": "employees",
+      "columns": {
+        "EmployeeId": {
+          "autoincrement": true,
+          "name": "EmployeeId",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "LastName": {
+          "autoincrement": false,
+          "name": "LastName",
+          "type": "text(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "FirstName": {
+          "autoincrement": false,
+          "name": "FirstName",
+          "type": "text(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Title": {
+          "autoincrement": false,
+          "name": "Title",
+          "type": "text(30)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ReportsTo": {
+          "autoincrement": false,
+          "name": "ReportsTo",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "BirthDate": {
+          "autoincrement": false,
+          "name": "BirthDate",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "HireDate": {
+          "autoincrement": false,
+          "name": "HireDate",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Address": {
+          "autoincrement": false,
+          "name": "Address",
+          "type": "text(70)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "City": {
+          "autoincrement": false,
+          "name": "City",
+          "type": "text(40)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "State": {
+          "autoincrement": false,
+          "name": "State",
+          "type": "text(40)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Country": {
+          "autoincrement": false,
+          "name": "Country",
+          "type": "text(40)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "PostalCode": {
+          "autoincrement": false,
+          "name": "PostalCode",
+          "type": "text(10)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Phone": {
+          "autoincrement": false,
+          "name": "Phone",
+          "type": "text(24)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Fax": {
+          "autoincrement": false,
+          "name": "Fax",
+          "type": "text(24)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Email": {
+          "autoincrement": false,
+          "name": "Email",
+          "type": "text(60)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {
+        "IFK_EmployeeReportsTo": {
+          "name": "IFK_EmployeeReportsTo",
+          "columns": [
+            "ReportsTo"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {
+        "employees_ReportsTo_employees_EmployeeId_fk": {
+          "name": "employees_ReportsTo_employees_EmployeeId_fk",
+          "tableFrom": "employees",
+          "tableTo": "employees",
+          "columnsFrom": [
+            "ReportsTo"
+          ],
+          "columnsTo": [
+            "EmployeeId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "genres": {
+      "name": "genres",
+      "columns": {
+        "GenreId": {
+          "autoincrement": true,
+          "name": "GenreId",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "Name": {
+          "autoincrement": false,
+          "name": "Name",
+          "type": "text(120)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "invoices": {
+      "name": "invoices",
+      "columns": {
+        "InvoiceId": {
+          "autoincrement": true,
+          "name": "InvoiceId",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "CustomerId": {
+          "autoincrement": false,
+          "name": "CustomerId",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "InvoiceDate": {
+          "autoincrement": false,
+          "name": "InvoiceDate",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "BillingAddress": {
+          "autoincrement": false,
+          "name": "BillingAddress",
+          "type": "text(70)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "BillingCity": {
+          "autoincrement": false,
+          "name": "BillingCity",
+          "type": "text(40)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "BillingState": {
+          "autoincrement": false,
+          "name": "BillingState",
+          "type": "text(40)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "BillingCountry": {
+          "autoincrement": false,
+          "name": "BillingCountry",
+          "type": "text(40)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "BillingPostalCode": {
+          "autoincrement": false,
+          "name": "BillingPostalCode",
+          "type": "text(10)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Total": {
+          "autoincrement": false,
+          "name": "Total",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {
+        "IFK_InvoiceCustomerId": {
+          "name": "IFK_InvoiceCustomerId",
+          "columns": [
+            "CustomerId"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {
+        "invoices_CustomerId_customers_CustomerId_fk": {
+          "name": "invoices_CustomerId_customers_CustomerId_fk",
+          "tableFrom": "invoices",
+          "tableTo": "customers",
+          "columnsFrom": [
+            "CustomerId"
+          ],
+          "columnsTo": [
+            "CustomerId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "invoice_items": {
+      "name": "invoice_items",
+      "columns": {
+        "InvoiceLineId": {
+          "autoincrement": true,
+          "name": "InvoiceLineId",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "InvoiceId": {
+          "autoincrement": false,
+          "name": "InvoiceId",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "TrackId": {
+          "autoincrement": false,
+          "name": "TrackId",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "UnitPrice": {
+          "autoincrement": false,
+          "name": "UnitPrice",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Quantity": {
+          "autoincrement": false,
+          "name": "Quantity",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {
+        "IFK_InvoiceLineTrackId": {
+          "name": "IFK_InvoiceLineTrackId",
+          "columns": [
+            "TrackId"
+          ],
+          "isUnique": false
+        },
+        "IFK_InvoiceLineInvoiceId": {
+          "name": "IFK_InvoiceLineInvoiceId",
+          "columns": [
+            "InvoiceId"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {
+        "invoice_items_TrackId_tracks_TrackId_fk": {
+          "name": "invoice_items_TrackId_tracks_TrackId_fk",
+          "tableFrom": "invoice_items",
+          "tableTo": "tracks",
+          "columnsFrom": [
+            "TrackId"
+          ],
+          "columnsTo": [
+            "TrackId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "invoice_items_InvoiceId_invoices_InvoiceId_fk": {
+          "name": "invoice_items_InvoiceId_invoices_InvoiceId_fk",
+          "tableFrom": "invoice_items",
+          "tableTo": "invoices",
+          "columnsFrom": [
+            "InvoiceId"
+          ],
+          "columnsTo": [
+            "InvoiceId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "media_types": {
+      "name": "media_types",
+      "columns": {
+        "MediaTypeId": {
+          "autoincrement": true,
+          "name": "MediaTypeId",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "Name": {
+          "autoincrement": false,
+          "name": "Name",
+          "type": "text(120)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "playlists": {
+      "name": "playlists",
+      "columns": {
+        "PlaylistId": {
+          "autoincrement": true,
+          "name": "PlaylistId",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "Name": {
+          "autoincrement": false,
+          "name": "Name",
+          "type": "text(120)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "playlist_track": {
+      "name": "playlist_track",
+      "columns": {
+        "PlaylistId": {
+          "autoincrement": false,
+          "name": "PlaylistId",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "TrackId": {
+          "autoincrement": false,
+          "name": "TrackId",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {
+        "playlist_track_PlaylistId_TrackId_pk": {
+          "columns": [
+            "PlaylistId",
+            "TrackId"
+          ],
+          "name": "playlist_track_PlaylistId_TrackId_pk"
+        }
+      },
+      "indexes": {
+        "IFK_PlaylistTrackTrackId": {
+          "name": "IFK_PlaylistTrackTrackId",
+          "columns": [
+            "TrackId"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {
+        "playlist_track_TrackId_tracks_TrackId_fk": {
+          "name": "playlist_track_TrackId_tracks_TrackId_fk",
+          "tableFrom": "playlist_track",
+          "tableTo": "tracks",
+          "columnsFrom": [
+            "TrackId"
+          ],
+          "columnsTo": [
+            "TrackId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "playlist_track_PlaylistId_playlists_PlaylistId_fk": {
+          "name": "playlist_track_PlaylistId_playlists_PlaylistId_fk",
+          "tableFrom": "playlist_track",
+          "tableTo": "playlists",
+          "columnsFrom": [
+            "PlaylistId"
+          ],
+          "columnsTo": [
+            "PlaylistId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "tracks": {
+      "name": "tracks",
+      "columns": {
+        "TrackId": {
+          "autoincrement": true,
+          "name": "TrackId",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "Name": {
+          "autoincrement": false,
+          "name": "Name",
+          "type": "text(200)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "AlbumId": {
+          "autoincrement": false,
+          "name": "AlbumId",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "MediaTypeId": {
+          "autoincrement": false,
+          "name": "MediaTypeId",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "GenreId": {
+          "autoincrement": false,
+          "name": "GenreId",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Composer": {
+          "autoincrement": false,
+          "name": "Composer",
+          "type": "text(220)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Milliseconds": {
+          "autoincrement": false,
+          "name": "Milliseconds",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Bytes": {
+          "autoincrement": false,
+          "name": "Bytes",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "UnitPrice": {
+          "autoincrement": false,
+          "name": "UnitPrice",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {
+        "IFK_TrackMediaTypeId": {
+          "name": "IFK_TrackMediaTypeId",
+          "columns": [
+            "MediaTypeId"
+          ],
+          "isUnique": false
+        },
+        "IFK_TrackGenreId": {
+          "name": "IFK_TrackGenreId",
+          "columns": [
+            "GenreId"
+          ],
+          "isUnique": false
+        },
+        "IFK_TrackAlbumId": {
+          "name": "IFK_TrackAlbumId",
+          "columns": [
+            "AlbumId"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {
+        "tracks_MediaTypeId_media_types_MediaTypeId_fk": {
+          "name": "tracks_MediaTypeId_media_types_MediaTypeId_fk",
+          "tableFrom": "tracks",
+          "tableTo": "media_types",
+          "columnsFrom": [
+            "MediaTypeId"
+          ],
+          "columnsTo": [
+            "MediaTypeId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "tracks_GenreId_genres_GenreId_fk": {
+          "name": "tracks_GenreId_genres_GenreId_fk",
+          "tableFrom": "tracks",
+          "tableTo": "genres",
+          "columnsFrom": [
+            "GenreId"
+          ],
+          "columnsTo": [
+            "GenreId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "tracks_AlbumId_albums_AlbumId_fk": {
+          "name": "tracks_AlbumId_albums_AlbumId_fk",
+          "tableFrom": "tracks",
+          "tableTo": "albums",
+          "columnsFrom": [
+            "AlbumId"
+          ],
+          "columnsTo": [
+            "AlbumId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "sqlite_stat1": {
+      "name": "sqlite_stat1",
+      "columns": {},
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    }
+  },
+  "views": {
+    "view1": {
+      "columns": {
+        "Title": {
+          "autoincrement": false,
+          "name": "Title",
+          "type": "text(160)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "isExisting": false,
+      "name": "view1",
+      "definition": "SELECT title FROM albums a"
+    }
+  },
+  "enums": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  }
+}

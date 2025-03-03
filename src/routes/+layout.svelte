@@ -12,7 +12,7 @@
   <a href="{base}/" class:active={isActive('/')}>home</a>
   <a href="{base}/about" class:active={isActive('/about')}>about</a>
   <a href="{base}/junk" class:active={isActive('/junk')}>junk</a>
-  <a href="{base}/new" class:active={isActive('/new')}>new</a>
+  <a href="{base}/onetable" class:active={isActive('/onetable')}>onetable</a>
 </nav>
 
 <style>
@@ -20,7 +20,7 @@
     margin-bottom: 2rem;
   }
   .active {
-    color: #ff3e00;
+    color: #9900ff;
     font-weight: bold;
     border-bottom: 2px solid;
   }

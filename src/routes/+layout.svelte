@@ -10,9 +10,9 @@
 
 <nav>
   <a href="{base}/" class:active={isActive('/')}>home</a>
-  <a href="{base}/about" class:active={isActive('/about')}>about</a>
   <a href="{base}/junk" class:active={isActive('/junk')}>junk</a>
   <a href="{base}/onetable" class:active={isActive('/onetable')}>onetable</a>
+  <a href="{base}/jointables" class:active={isActive('/jointables')}>jointables</a>
 </nav>
 
 <style>

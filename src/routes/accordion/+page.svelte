@@ -2,8 +2,6 @@
   import { Accordion } from "bits-ui";
 </script>
 
-<h1>junk</h1>
-
 <Accordion.Root>
 	<Accordion.Item>
 		<Accordion.Header>
@@ -31,8 +29,6 @@
 		<Accordion.Content>Third accordion content</Accordion.Content>
 	</Accordion.Item>
 </Accordion.Root>
-
-<p>this is the junk page.</p>
 
 <style>
   :global(div[data-accordion-root]) {

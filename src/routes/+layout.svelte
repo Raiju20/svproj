@@ -10,10 +10,11 @@
 
 <nav>
   <a href="{base}/" class:active={isActive('/')}>home</a>
-  <a href="{base}/junk" class:active={isActive('/junk')}>junk</a>
+  <a href="{base}/accordion" class:active={isActive('/accordion')}>accordion</a>
   <a href="{base}/onetable" class:active={isActive('/onetable')}>onetable</a>
   <a href="{base}/jointables" class:active={isActive('/jointables')}>jointables</a>
   <a href="{base}/artistsal" class:active={isActive('/artistsal')}>artistsal</a>
+  <a href="{base}/params" class:active={isActive('/params')}>params</a>
 </nav>
 
 <style>

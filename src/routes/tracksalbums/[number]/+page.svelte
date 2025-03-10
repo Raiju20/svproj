@@ -7,11 +7,11 @@
  
  <div style='padding:10px'>
      {#if data && data.result}
-         {#each data.result as album}
-             <div>{album.title}</div>
+         {#each data.result as track}
+             <div>{track.name}</div>
              <!-- <div>{data.bla}</div> -->
          {:else}
-             <div>Исполнитель не имеет альбомов.</div>
+             <div>У альбома нет треков</div>
          {/each}
      {/if}
  </div>

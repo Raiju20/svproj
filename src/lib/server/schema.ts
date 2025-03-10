@@ -7,6 +7,7 @@ import type { InferSelectModel } from "drizzle-orm";
 export type Question = InferSelectModel<typeof artists>;
 
 export type Album = InferSelectModel<typeof albums>;
+export type Track = InferSelectModel<typeof tracks>;
 export type ArtWithAlbums =Question & {albums:Album[]}
 //!!
 import { relations } from 'drizzle-orm';

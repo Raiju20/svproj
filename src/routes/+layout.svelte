@@ -15,6 +15,7 @@
   <a href="{base}/jointables" class:active={isActive('/jointables')}>jointables</a>
   <a href="{base}/artistsal" class:active={isActive('/artistsal')}>artistsal</a>
   <a href="{base}/params" class:active={isActive('/params')}>params</a>
+  <a href="{base}/tracksalbums" class:active={isActive('/tracksalbums')}>tracksalbums</a>
 </nav>
 
 <style>

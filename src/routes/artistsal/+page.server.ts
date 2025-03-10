@@ -1,5 +1,5 @@
 import type { PageServerLoad } from './$types';
-import type { Artist } from "$lib/interfaces/artist";
+//import type { Artist } from "$lib/interfaces/artist";
 import { db, artists, albums } from '$lib/server/db'
 import { eq, asc, desc, } from 'drizzle-orm';
 

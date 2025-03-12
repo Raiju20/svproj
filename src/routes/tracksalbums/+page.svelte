@@ -14,7 +14,7 @@
         {#each data.result as album}
             <div style="display:flex;gap:10px">
                 <div style="width:350px;padding:3px">
-                    <a href={`/paramsnum/${album.albumsId}`}>
+                    <a href={`/tracksalbums/${album.albumsId}`}>
                         {album.albumsName}
                     </a>
                 </div>

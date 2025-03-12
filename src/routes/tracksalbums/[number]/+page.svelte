@@ -5,11 +5,14 @@
     
  </script>
  
+<!-- <h3>
+    {JSON.stringify(data.result)}
+</h3> -->
+
  <div style='padding:10px'>
      {#if data && data.result}
          {#each data.result as track}
              <div>{track.name}</div>
-             <!-- <div>{data.bla}</div> -->
          {:else}
              <div>У альбома нет треков</div>
          {/each}

@@ -16,6 +16,8 @@
   <a href="{base}/artistsal" class:active={isActive('/artistsal')}>artistsal</a>
   <a href="{base}/params" class:active={isActive('/params')}>params</a>
   <a href="{base}/tracksalbums" class:active={isActive('/tracksalbums')}>tracksalbums</a>
+  <a href="{base}/findalbum" class:active={isActive('/findalbum')}>findalbum</a>
+  <a href="{base}/zod" class:active={isActive('/zod')}>zod</a>
 </nav>
 
 <style>
